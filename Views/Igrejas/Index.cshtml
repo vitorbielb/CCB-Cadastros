@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Igreja>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(x => x.SetorADM)</th>
+        <th>@Html.DisplayNameFor(x => x.Bairro)</th>
+        <th>@Html.DisplayNameFor(x => x.Nome)</th>
+        <th>@Html.DisplayNameFor(x => x.Localidade)</th>
+    </tr>
+    @foreach (var igreja in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(x => igreja.SetorADM)</td>
+            <td>@Html.DisplayFor(x => igreja.Bairro)</td>
+            <td>@Html.DisplayFor(x => igreja.Nome)</td>
+            <td>@Html.DisplayFor(x => igreja.Localidade)</td>
+            <td>
+                <input type="button" value="Editar" class="btn btn-primary" onclick="location.href='igrejas/update?id=@igreja.Id'" />
+                <input type="button" value="Deletar" class="btn btn-danger" onclick="location.href='igrejas/delete?id=@igreja.Id'" />
+            </td>
+        </tr>
+    }
+</table>
+
+<button type="button" class="btn btn-primary" onclick="location.href='igrejas/create'">Novo</button>

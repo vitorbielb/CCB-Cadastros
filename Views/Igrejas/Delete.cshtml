@@ -1,0 +1,42 @@
+﻿@model Igreja
+
+<div>
+    <dl class="row">
+        <form asp-action="Delete">
+
+        <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.SetorADM)
+        </dt>
+        <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.SetorADM)
+        </dd>
+
+        <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Bairro)
+        </dt>
+        <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Bairro)
+        </dd>
+
+        <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Localidade)
+        </dt>
+        <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Localidade)
+        </dd>
+
+            @Html.HiddenFor(model => model.Id)
+        <div class="form-control">
+            <input type="submit" value="Deletar" class="btn btn-danger" />
+            <input type="button" value="Cancelar" class="btn btn-secondary" onclick="location.href='@Url.Action("Index","Igrejas")'" />
+        </div>
+        </form>
+    </dl>
+</div>
